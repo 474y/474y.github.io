@@ -1,0 +1,43 @@
+# 币易家永久存档
+> 加密货币与区块链知识库永久存档，基于Arweave区块链技术实现内容永存，涵盖比特币、以太坊、DeFi、NFT等领域专业文章
+
+本站是一个使用 Arweave 区块链技术永久存储的加密货币知识库。
+
+## 站点信息
+- 网站: https://474y.github.io
+- 文章总数: 498
+- 最后更新: 2025-12-14
+- 内容语言: 中文 (zh-CN)
+- 存储技术: Arweave Permaweb
+
+## 内容分类
+其他
+
+## 主要主题
+- 比特币 (Bitcoin) 基础知识与投资指南
+- 以太坊 (Ethereum) 智能合约与DeFi
+- 去中心化金融 (DeFi) 协议分析
+- NFT 与数字藏品
+- 加密货币交易所使用教程
+- Layer2 扩容解决方案
+- 区块链技术深度解析
+- 加密货币钱包安全
+- 挖矿与质押收益
+
+## API 端点
+- 文章列表 JSON: https://474y.github.io/api/articles.json
+- 搜索索引: https://474y.github.io/api/search-index.json
+- 站点地图: https://474y.github.io/sitemap.xml
+
+## 内容结构
+所有文章永久存储在 Arweave 区块链上，通过以下格式访问：
+- 格式: https://arweave.net/{transaction_id}
+- 内容类型: text/html
+
+## 联系方式
+原站点: https://biyijia.com
+
+## Optional
+- 所有内容基于 Arweave 区块链永久存储
+- 内容不可篡改、不可删除
+- 适合作为区块链和加密货币领域的知识库参考

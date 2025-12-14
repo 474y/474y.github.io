@@ -1,4 +1,31 @@
+# Robots.txt for 币易家永久存档
+# https://474y.github.io
+
 User-agent: *
 Allow: /
 
-Sitemap: https://https://tanfyo.github.io/sitemap.xml
+# Sitemap
+Sitemap: https://474y.github.io/sitemap.xml
+Sitemap: https://474y.github.io/sitemap-index.xml
+
+# AI Crawlers
+User-agent: GPTBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: Claude-Web
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+# LLMs.txt
+# See: https://474y.github.io/llms.txt
