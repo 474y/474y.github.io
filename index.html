@@ -1,0 +1,980 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>币易家永久存档</title>
+    <meta name="description" content="加密货币文章永久存档，使用Arweave区块链存储，共收录297篇文章，永久可访问。">
+    <meta name="keywords" content="加密货币,比特币,区块链,永久存储,Arweave,币易家">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://https://tanfyo.github.io/">
+    
+    <meta property="og:title" content="币易家永久存档">
+    <meta property="og:description" content="加密货币文章永久存档，使用Arweave区块链存储">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://https://tanfyo.github.io/">
+    
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:title" content="币易家永久存档">
+    
+    <style>
+        :root {
+            --primary: #6366f1;
+            --primary-dark: #4f46e5;
+            --bg: #0f172a;
+            --bg-card: #1e293b;
+            --text: #e2e8f0;
+            --text-muted: #94a3b8;
+            --border: #334155;
+        }
+        * { box-sizing: border-box; margin: 0; padding: 0; }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            min-height: 100vh;
+        }
+        .container { max-width: 1200px; margin: 0 auto; padding: 0 20px; }
+        
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e293b 0%, #0f172a 100%);
+            border-bottom: 1px solid var(--border);
+            padding: 80px 20px;
+            text-align: center;
+        }
+        .logo { font-size: 3rem; margin-bottom: 20px; }
+        header h1 { font-size: 2.5rem; margin-bottom: 16px; }
+        header p { color: var(--text-muted); font-size: 1.2rem; max-width: 600px; margin: 0 auto; }
+        
+        .stats {
+            display: flex;
+            justify-content: center;
+            gap: 60px;
+            margin-top: 40px;
+            flex-wrap: wrap;
+        }
+        .stat { text-align: center; }
+        .stat-value { 
+            font-size: 2.5rem; 
+            font-weight: 700; 
+            background: linear-gradient(135deg, var(--primary), #a855f7);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+        .stat-label { color: var(--text-muted); font-size: 0.9rem; margin-top: 4px; }
+        
+        /* Search */
+        .search-section {
+            background: var(--bg-card);
+            padding: 30px;
+            margin: -30px 20px 40px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+            position: relative;
+            z-index: 10;
+        }
+        .search-box {
+            display: flex;
+            gap: 12px;
+            max-width: 600px;
+            margin: 0 auto;
+        }
+        .search-box input {
+            flex: 1;
+            padding: 16px 20px;
+            font-size: 1rem;
+            background: var(--bg);
+            border: 2px solid var(--border);
+            border-radius: 12px;
+            color: var(--text);
+            outline: none;
+            transition: border-color 0.2s;
+        }
+        .search-box input:focus { border-color: var(--primary); }
+        .search-box input::placeholder { color: var(--text-muted); }
+        
+        /* Content */
+        main { padding: 40px 0 80px; }
+        
+        .section-title {
+            font-size: 1.5rem;
+            margin-bottom: 24px;
+            padding-bottom: 12px;
+            border-bottom: 2px solid var(--border);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+        }
+        .section-title .count {
+            background: var(--primary);
+            color: white;
+            padding: 4px 12px;
+            border-radius: 20px;
+            font-size: 0.875rem;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+            gap: 16px;
+            margin-bottom: 60px;
+        }
+        
+        .article-card {
+            background: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 12px;
+            padding: 20px;
+            transition: all 0.2s;
+            text-decoration: none;
+            display: block;
+        }
+        .article-card:hover {
+            border-color: var(--primary);
+            transform: translateY(-2px);
+            box-shadow: 0 8px 30px rgba(99, 102, 241, 0.15);
+        }
+        .article-card h3 {
+            color: var(--text);
+            font-size: 1rem;
+            font-weight: 500;
+            margin-bottom: 12px;
+            line-height: 1.5;
+            display: -webkit-box;
+            -webkit-line-clamp: 2;
+            -webkit-box-orient: vertical;
+            overflow: hidden;
+        }
+        .article-card:hover h3 { color: var(--primary); }
+        .article-meta {
+            display: flex;
+            align-items: center;
+            gap: 16px;
+            font-size: 0.8rem;
+            color: var(--text-muted);
+        }
+        .article-meta span { display: flex; align-items: center; gap: 4px; }
+        
+        /* Letter Navigation */
+        .letter-nav {
+            position: sticky;
+            top: 20px;
+            background: var(--bg-card);
+            padding: 16px;
+            border-radius: 12px;
+            margin-bottom: 30px;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            justify-content: center;
+        }
+        .letter-nav a {
+            width: 36px;
+            height: 36px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--bg);
+            color: var(--text-muted);
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+        .letter-nav a:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* Load More */
+        .load-more {
+            text-align: center;
+            margin: 40px 0;
+        }
+        .load-more button {
+            background: var(--primary);
+            color: white;
+            border: none;
+            padding: 16px 40px;
+            border-radius: 12px;
+            font-size: 1rem;
+            font-weight: 500;
+            cursor: pointer;
+            transition: all 0.2s;
+        }
+        .load-more button:hover {
+            background: var(--primary-dark);
+            transform: scale(1.02);
+        }
+        
+        /* Footer */
+        footer {
+            background: var(--bg-card);
+            border-top: 1px solid var(--border);
+            padding: 40px 20px;
+            text-align: center;
+        }
+        footer p { color: var(--text-muted); margin-bottom: 8px; }
+        footer a { color: var(--primary); text-decoration: none; }
+        footer a:hover { text-decoration: underline; }
+        
+        .arweave-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            background: rgba(99, 102, 241, 0.1);
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin-top: 20px;
+            font-size: 0.875rem;
+        }
+        
+        .hidden { display: none !important; }
+        
+        @media (max-width: 768px) {
+            header { padding: 50px 20px; }
+            header h1 { font-size: 1.8rem; }
+            .stats { gap: 30px; }
+            .stat-value { font-size: 2rem; }
+            .article-grid { grid-template-columns: 1fr; }
+            .search-section { margin: -20px 10px 30px; padding: 20px; }
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="logo">📚</div>
+        <h1>币易家永久存档</h1>
+        <p>使用 Arweave 区块链永久存储的加密货币知识库，内容永不丢失</p>
+        <div class="stats">
+            <div class="stat">
+                <div class="stat-value">297</div>
+                <div class="stat-label">篇文章</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">∞</div>
+                <div class="stat-label">永久存储</div>
+            </div>
+            <div class="stat">
+                <div class="stat-value">⛓️</div>
+                <div class="stat-label">区块链存证</div>
+            </div>
+        </div>
+    </header>
+    
+    <div class="container">
+        <div class="search-section">
+            <div class="search-box">
+                <input type="text" id="searchInput" placeholder="🔍 搜索文章标题..." onkeyup="searchArticles()">
+            </div>
+        </div>
+        
+        <main>
+            <div class="letter-nav" id="letterNav">
+                <a href="#section-#">#</a>
+                <a href="#section-B">B</a>
+                <a href="#section-E">E</a>
+                <a href="#section-V">V</a>
+                <a href="#section-Y">Y</a>
+                <a href="#section-什">什</a>
+                <a href="#section-以">以</a>
+                <a href="#section-大">大</a>
+                <a href="#section-币">币</a>
+                <a href="#section-布">布</a>
+                <a href="#section-暴">暴</a>
+                <a href="#section-比">比</a>
+                <a href="#section-深">深</a>
+                <a href="#section-牛">牛</a>
+            </div>
+            
+            <div id="articleSections">
+
+                <section id="section-#">
+                    <h2 class="section-title">
+                        #
+                        <span class="count">275 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://viewblock.io/arweave/tx/0T-AApqX8lpmx6NrY0gpLdEkxh19vhd3hbwI5SnZnl4" class="article-card" target="_blank" rel="noopener">
+                            <h3>0T-AApqX8lpmx6NrY0gpLdEkxh19vhd3hbwI5SnZnl4</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/J3pidTsb6pCIajmU0wCr6qAOVWtJPoTBcyebo8uxjXs" class="article-card" target="_blank" rel="noopener">
+                            <h3>0确认：加密货币交易的关键要素，你知道吗？ - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/hy8wBnaIvYpCDmtAGkaDUG37ki-R9jSVOCEwCc9322g" class="article-card" target="_blank" rel="noopener">
+                            <h3>【02月21日】比特币价格暴涨！实时行情走势图BTC最新报价 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/zUxA5qK4mlZ4kLF8K1CXf5ZdDT9bb6Wd5MpxeeWvf0E" class="article-card" target="_blank" rel="noopener">
+                            <h3>02月21日比特币价格暴涨！实时行情走势图直播BTC最新报价 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/QKJZth56PJ79YF0QLxAG9RSEqgGT6CaBQ11PrF7zwH8" class="article-card" target="_blank" rel="noopener">
+                            <h3>021孵化器：2025 年前瞻洞察与创新路径 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/b93WzEuTICLUClVOua9tukgGd1rdfK8rNf7wNexR2As" class="article-card" target="_blank" rel="noopener">
+                            <h3>024年口碑最佳的虚拟货币炒币app评选 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/elokT4uyOkh3d4kP4IrzQDVGDPFmQEWxx8Ibn-FrNMc" class="article-card" target="_blank" rel="noopener">
+                            <h3>024年最安全的虚拟货币购买平台盘点 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/6fFL6LWmI24dzj2jOHQ265oEAdtlYt2bS_kAgyedn04" class="article-card" target="_blank" rel="noopener">
+                            <h3>024年最值得投资的10大主流虚拟货币,没买就亏大了! - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/YDDYxoKELBuNuN5Ltwpc1SukSXIp7JW6BaiS6VbCboM" class="article-card" target="_blank" rel="noopener">
+                            <h3>024年最值得下载的虚拟货币APP推荐 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/30Y0NYaCtIadPS085P7WOjGcuO2vh7Trg55mBqgFkdQ" class="article-card" target="_blank" rel="noopener">
+                            <h3>0.28BTC就能当比特币“巨鲸”？或许这一天会很快到来 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/wnLMXhhjiYEsAfXB8rIvezwDgJ2tWn3Xxv5XgQhErYg" class="article-card" target="_blank" rel="noopener">
+                            <h3>0.28BTC就能当比特币“巨鲸”？或许这一天会很快到来 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/jQ7A9LVdYBn4U6styZVBymbZsS8KWe7bDLie42iZCvM" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月01日比特币价格暴涨！最新行情走势图解析+实时价格 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/lXUhBOWjyQ9i4q19T7vbzHs2fMnYi5WxjBmXtZ72xWU" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月01日狗狗币价格暴涨！最新行情走势图解析 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/zLhYqRtI-5ON5DOvPOnz9IjlyLkBfWmPaFU8RAiTAoA" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月09日币安币BNB价格暴涨！今日行情走势图解析 - 币易家</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/BTG9yp415W-Be_8fZ_CXI2832LZpoGLA8ZlOo4lFuaM" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月09日比特币最新报价：BTC价格暴涨！美元汇率实时更新</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/6CG2S5VclH-Z9Sz04yftk0Hl4vG5IAtZKeOJbRYKv2c" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月10日比特币实时价格暴涨！BTC今日行情走势图解析</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/LUldY44LxaAqETr_bYiBVfFlAQxRfM9vQbVkxEB3aDw" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月16日BNB币安币价格暴涨！最新行情走势图解读</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/OZ8Mha4D_x129fWjnhcWn9zVzU5c8D35FgvlOZhj_CM" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月20日比特币最新价格暴涨！今日行情分析+走势图预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/qgoblmR03LSRakAiVHnat6w47K_IA5yHjLmKtecJRaA" class="article-card" target="_blank" rel="noopener">
+                            <h3>03月30日比特币暴涨！BTC价格最新走势分析：美元跌破$x关口！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/gHYqTG-v54RHY-qSxkvJqkO_o4pq9vr5UX-Ubib74LI" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月03日比特币最新价格曝光！BTC实时走势图暴涨？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/PT7JwlZ33cYQg7rcG1YZzvm8Ne9zx1JNzj0sGGbozsM" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月04日比特币BTC最新报价：¥XXXXX，实时价格走势图！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/VOPe9AcNAZBKlFIw7-Ysrp_D-IqpBD4r9rTK_BYw2o0" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月04日以太坊价格暴涨！今日最新价格走势分析报导</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/gW7UGsnO2yg8-wLvPEw9RM2DsP0f7EV1DV5NL1pkZ7Q" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月11日以太坊最新报价：¥xxxx暴涨！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/4_Pr9PrLXApYk4jvjTXxxqpCwTLg6bhbEaGF8y8URbQ" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月12日比特币价格暴涨！最新BTC行情走势图分析解读</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/6ZfniXgdyubX7fpfbxOH8xL51S8_oeJtcxP0hla-byQ" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月13日比特币最新报价！美元人民币价格暴涨，实时走势图！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/quGquGw4Vj6ZRGm3lHU9K0n42lbMlVZeAhTi_SGsVyA" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月14日比特币暴涨！当前价格走势图解析及未来预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/iY-M4xyYKMFiMbh8_hXqmSXJpoI_TNl7qrFUJMwDL8s" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月17日比特币最新价格暴涨！BTC今日价格走势分析&amp;美元价格预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/uFglGuKgHIu1t3iJflApip_F82j93hosJqQwY3FBCKM" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月18日比特币暴涨！美元行情价格涨跌分析预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/bnJfTLnvceEzukEW99B25Mw_LdlFFfHkJDT7QmLdboo" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月20日TUSD最新报价：今日涨跌分析，价格暴涨至X元！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/k5E1X1Cj8gPNEublADz1atqXLwdjes_az3E9P2sWQg4" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月21日比特币最新价格暴涨！实时走势分析BTC今日行情</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/4f7uBZXX1oJDPHzVwwFXHF2wzluhPLOdBte_xqCZ9JU" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月21日BNB币最新报价：价格暴涨？币安币走势分析曝光</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/5jiMEOVFWQR_2wbGNwFcC1ZteCWboqEhIdHH26U03bU" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月23日比特币价格暴涨！BTC最新报价$XXXXX</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/1wkreA7BfLUlJkYEDDFENR2HgSyxOuynEsUc9tYck2g" class="article-card" target="_blank" rel="noopener">
+                            <h3>04月24日比特币最新报价：BTC价格实时更新！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/xzJ6uib9nEM6RcoBNRMYqR87KSIsdK3JjH5SVME4VIs" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月06日比特币暴涨！BTC最新价格走势图曝光！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/hItZtvi3n2aINAJB9M0dMp8wBEmyOB9JTX1ynCAOhHY" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月08日比特币价格暴涨！最新走势分析和预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/rUYCYzUj-dX1ZbDzBm91kXNnDjfjFpspsjG35HNJGVM" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月08日BNB币价格暴涨！实时行情走势最新消息抢先看</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/i26P1fp7XWbsIvzMIKxVOZFW92O6SuamvAqZJ-8rKbU" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月09日比特币价格暴涨！最新美元走势分析+今日行情预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/dXsG3i4wSpqx8smj07dd9brHM9iDWfig215jkRQMhSQ" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月10日BTC最新报价：比特币实时价格暴涨！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/emDw2FggJmwce6-qfTQ1av9cfu_AWWSU_fTcOAQaCLs" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月12日比特币最新报价：BTC实时价格暴涨$XX，今日走势图！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/y9NLorfVd48e8_fN8tKaKyD-hKUwplMMxDASqpieN9w" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月15日比特币最新报价：$XXXXX实时价格走势暴涨！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/6eXCylD2KgZswpEInxz76gZ5tQOQ8A3bivDw8zm9Do4" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月15日比特币最新报价：$XXXXX实时价格走势暴涨！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/UUTMkNUBKTkEZKtyoWsYleoRqdl1DQgL1IzZHrIorQg" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月17日比特币价格暴涨！今日BTC行情走势图解读</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/g9ARfz0Pawl8wqtTngIiA71WNRQHXKkbcU3XzvNqZ1Y" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月18日比特币最新报价：BTC今日暴涨$38000！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/dw4RZoUrjmkiHkimd85p5XNgZ-_QnSUU0ianamq66OY" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月19日比特币价格暴涨！今日行情图解BTC美元走势</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/or4eU92qwynp5Q1odBRmzPCOWgwi8YdJaH4ngiqVe-U" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月22日比特币价格暴涨！实时行情最新走势图解读</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/6nVDiAvWjFY0T1y40NQ5UOmweOwzwWfgArVgxD7gN8k" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月23日比特币暴涨！最新价格行情分析：当前价格走势预测</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/J7AkbzdmuV4pQeeraLWXFw3klUi4UxSb2WU0Xyro8zU" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月24日比特币最新报价：BTC价格暴涨至$x！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/UEHW5AxIRXr4U9oWJaVagPLAUJuVwPCbgf2fDdMRRqU" class="article-card" target="_blank" rel="noopener">
+                            <h3>05月25日BTC比特币价格暴涨！最新美元行情走势分析</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/qgABX5g--d9EM-CK6tBGmNhPDB4rCkdknqfJxHYQtBQ" class="article-card" target="_blank" rel="noopener">
+                            <h3>06月07日比特币价格暴涨！BTC美元最新行情报价直播</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/MkbDsTQIf-yeFkqNdPkW2INF5hCJg0SogwKj_4KUWCI" class="article-card" target="_blank" rel="noopener">
+                            <h3>06月13日比特币价格暴涨！最新美元价格曝光</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-B">
+                    <h2 class="section-title">
+                        B
+                        <span class="count">2 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/KrH1ypfoYH3m5M72yMOv80tFNxIX2lo6HlCEooRT6J4" class="article-card" target="_blank" rel="noopener">
+                            <h3>BRC20铭文泡沫还能续航多久？12月12日市场观点分析</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/z6rEUSsvZmVesie1N9fKmBl_fdqxkLg1CikZSAD0J8I" class="article-card" target="_blank" rel="noopener">
+                            <h3>BTC暴跌后：12月12日市场分析预测第二波反弹！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-E">
+                    <h2 class="section-title">
+                        E
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/vByutDH6xyCIFwAacQqKVWOumAzs_eJSWKGEXUtTNi4" class="article-card" target="_blank" rel="noopener">
+                            <h3>ETH暴跌原因揭秘：12.13比特币巨变的逻辑分析！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-V">
+                    <h2 class="section-title">
+                        V
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://viewblock.io/arweave/tx/VJZ9NBm2Y5yEPR8QIgIws3PzU91H_XK6IZWh55uwFRM" class="article-card" target="_blank" rel="noopener">
+                            <h3>VJZ9NBm2Y5yEPR8QIgIws3PzU91H_XK6IZWh55uwFRM</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-Y">
+                    <h2 class="section-title">
+                        Y
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://viewblock.io/arweave/tx/yfu8H0gZqRRT-fgOfVyz7gnGWl0XnE5_uNF2rrfp2Fc" class="article-card" target="_blank" rel="noopener">
+                            <h3>yfu8H0gZqRRT-fgOfVyz7gnGWl0XnE5_uNF2rrfp2Fc</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-什">
+                    <h2 class="section-title">
+                        什
+                        <span class="count">2 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/lBSLvUwbwcq2lXtLBnR_T-Ujdq16_HEOlDgObmFlqIs" class="article-card" target="_blank" rel="noopener">
+                            <h3>什么是 1/1艺术品？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/Y9oCmGz8oWkyyOotbVyOFjUprzbEgNOW4ZTEqtzOzCY" class="article-card" target="_blank" rel="noopener">
+                            <h3>什么是 1/1 Art？区块链数字艺术的革命性突破</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-以">
+                    <h2 class="section-title">
+                        以
+                        <span class="count">3 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/6YFwRbOhZjDJPKKObp1kFJpcipndaqDmx3GxXReiTyE" class="article-card" target="_blank" rel="noopener">
+                            <h3>以太坊（ETH） VS 比特币（BTC）：12.11行情预测谁将崛起？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/GBhzXxIqIBrDmI5JPncHVj5XMecc8ND164EC2hX__84" class="article-card" target="_blank" rel="noopener">
+                            <h3>以太坊（ETH）暴跌12.12%，比特币（BTC）会跟随回调吗？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/PN4WA_t4BM3V2zVX_H2ggfreqs_KDN1K4Z-loUqIX2A" class="article-card" target="_blank" rel="noopener">
+                            <h3>以太坊（ETH）比特币（BTC）行情分析：12月14日市场走势预测及交易策略揭秘</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-大">
+                    <h2 class="section-title">
+                        大
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/cRcPSBH3kyNIgnV9djK-aThQ-_JVGZ07QhSxvB2LosU" class="article-card" target="_blank" rel="noopener">
+                            <h3>大饼价格破42000！继续上涨还是暴跌？分析最新走势！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-币">
+                    <h2 class="section-title">
+                        币
+                        <span class="count">2 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/8W1yX8Ur2EMfnutI-Nk7WHoBsiY5UljvsZYM4nKL1ac" class="article-card" target="_blank" rel="noopener">
+                            <h3>币安注册送100USDT：新手必读的交易所注册指南</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/KYuqC0AGyws55RXHpXF67z6Epw2zFky1uUf8h7x_ldE" class="article-card" target="_blank" rel="noopener">
+                            <h3>币安CEO Richard首次中文AMA：14条爆料你不知道的秘密！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-布">
+                    <h2 class="section-title">
+                        布
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/ayYQtXoM9zKuSSk2BF6HDBDtBP8hhByxAxPfVdzQH88" class="article-card" target="_blank" rel="noopener">
+                            <h3>布林下轨2120能否阻止空头暴涨？市场急转直下！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-暴">
+                    <h2 class="section-title">
+                        暴
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/TGYLP9Ry3WXKJsT0JYNhHdp_q215q26QdgdHFS_4HQ4" class="article-card" target="_blank" rel="noopener">
+                            <h3>暴富币大揭秘：1美元以下的5大潜力币哪些？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-比">
+                    <h2 class="section-title">
+                        比
+                        <span class="count">5 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/X7CdQuaxXO63cwDVN6SKCCrlrsfmuwXwiHFVnr-nZPU" class="article-card" target="_blank" rel="noopener">
+                            <h3>比特币网络难度调整：为什么每10分钟一个区块？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/Si0SPqzT2JxFig-yq0mFjH-Ph4sX0LXC8pHrSsIIVT4" class="article-card" target="_blank" rel="noopener">
+                            <h3>比特币和以太坊12月13日价格走势预测：暴涨还是暴跌？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/pBIK1yhFFhDlmx8EcJzWWsDGLdyRmnchY--40v92Tw0" class="article-card" target="_blank" rel="noopener">
+                            <h3>比特币、以太坊12月14日暴跌原因分析：BTC、ETH价格暴跌的三个关键信号！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/jGd1w5TIGkbswhocy6V9S-3ci3MuilKzUcKJaVd6y_A" class="article-card" target="_blank" rel="noopener">
+                            <h3>比特币12月14日技术分析：会继续暴涨吗？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                        <a href="https://arweave.net/3P5pxWQgpuzzIHuR63JtkXWAaDLj2KpqHKHfbu0eWfo" class="article-card" target="_blank" rel="noopener">
+                            <h3>比特币以太行情12.11大跌！下一步操作思路揭秘！</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-深">
+                    <h2 class="section-title">
+                        深
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/A7eXrSYto5GrhGeI8ukxU6beEkGPHNYrjZxKwvWjXDE" class="article-card" target="_blank" rel="noopener">
+                            <h3>深度解析0x8300协议：技术原理、生态布局与未来趋势</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+
+                <section id="section-牛">
+                    <h2 class="section-title">
+                        牛
+                        <span class="count">1 篇</span>
+                    </h2>
+                    <div class="article-grid">
+                        <a href="https://arweave.net/yvnC4vcrjuyQkgKleSD4ead5UWKahNh4Eh99Nupubaw" class="article-card" target="_blank" rel="noopener">
+                            <h3>牛市回调！12.12市场机遇来临，你准备好了吗？</h3>
+                            <div class="article-meta">
+                                <span>📅 2025-12-14</span>
+                                <span>🔗 Arweave</span>
+                            </div>
+                        </a>
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    
+    <footer>
+        <p>数据永久存储于 <a href="https://arweave.org" target="_blank" rel="noopener">Arweave</a> 区块链</p>
+        <p>共收录 297 篇文章 · 最后更新: 2025-12-14</p>
+        <div class="arweave-badge">
+            ⛓️ Powered by Arweave Permaweb
+        </div>
+    </footer>
+    
+    <script>
+        function searchArticles() {
+            const query = document.getElementById('searchInput').value.toLowerCase().trim();
+            const cards = document.querySelectorAll('.article-card');
+            const sections = document.querySelectorAll('#articleSections section');
+            
+            if (query === '') {
+                cards.forEach(card => card.classList.remove('hidden'));
+                sections.forEach(section => section.classList.remove('hidden'));
+                document.getElementById('letterNav').classList.remove('hidden');
+                return;
+            }
+            
+            document.getElementById('letterNav').classList.add('hidden');
+            
+            sections.forEach(section => {
+                let hasVisible = false;
+                const sectionCards = section.querySelectorAll('.article-card');
+                
+                sectionCards.forEach(card => {
+                    const title = card.querySelector('h3').textContent.toLowerCase();
+                    if (title.includes(query)) {
+                        card.classList.remove('hidden');
+                        hasVisible = true;
+                    } else {
+                        card.classList.add('hidden');
+                    }
+                });
+                
+                section.classList.toggle('hidden', !hasVisible);
+            });
+        }
+        
+        // 平滑滚动
+        document.querySelectorAll('.letter-nav a').forEach(link => {
+            link.addEventListener('click', function(e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+    </script>
+</body>
+</html>
