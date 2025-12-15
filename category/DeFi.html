@@ -1,0 +1,680 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DeFi - 分类归档 - 币易家永久存档</title>
+    <meta name="description" content="关于 DeFi 的所有文章归档。">
+    <meta name="keywords" content="DeFi, 加密货币, 区块链, 永久存储, Arweave, 币安教程, 比特币, 以太坊, Web3">
+    
+    <!-- Tailwind CSS (CDN) -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: {
+                extend: {
+                    colors: {
+                        brand: {
+                            50: '#f0f9ff',
+                            500: '#0ea5e9',
+                            600: '#0284c7',
+                            900: '#0c4a6e',
+                        },
+                        darkbg: '#0f172a',
+                        cardbg: '#1e293b',
+                    },
+                    fontFamily: {
+                        sans: ['Inter', 'system-ui', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    
+    <!-- SEO & Schema -->
+    <link rel="canonical" href="https://474y.github.io/category/DeFi.html">
+    <meta name="robots" content="index, follow">
+    <script type="application/ld+json">{"@context": "https://schema.org", "@type": "CollectionPage", "name": "DeFi", "description": "Category: DeFi", "url": "https://474y.github.io/category/DeFi.html", "isPartOf": {"@type": "WebSite", "name": "币易家永久存档"}}</script>
+    
+    <style>
+        /* CSS 必须使用双大括号转义 */
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: #0f172a; }
+        ::-webkit-scrollbar-thumb { background: #334155; border-radius: 4px; }
+        ::-webkit-scrollbar-thumb:hover { background: #475569; }
+        
+        .ticker-wrap { overflow: hidden; white-space: nowrap; }
+        .ticker { display: inline-block; animation: ticker 30s linear infinite; }
+        @keyframes ticker { 
+            0% { transform: translate3d(0, 0, 0); } 
+            100% { transform: translate3d(-100%, 0, 0); } 
+        }
+        
+        .line-clamp-2 { display: -webkit-box; -webkit-line-clamp: 2; -webkit-box-orient: vertical; overflow: hidden; }
+        .line-clamp-3 { display: -webkit-box; -webkit-line-clamp: 3; -webkit-box-orient: vertical; overflow: hidden; }
+    </style>
+</head>
+<body class="bg-darkbg text-slate-300 font-sans antialiased min-h-screen flex flex-col">
+
+    <!-- Navbar -->
+    <header class="sticky top-0 z-50 bg-darkbg/90 backdrop-blur border-b border-slate-800">
+        <div class="container mx-auto px-4 h-16 flex items-center justify-between">
+            <a href="/" class="flex items-center gap-2 group">
+                <div class="w-8 h-8 rounded bg-gradient-to-br from-brand-500 to-purple-600 flex items-center justify-center text-white font-bold">B</div>
+                <span class="text-xl font-bold text-white tracking-tight group-hover:text-brand-500 transition">币易家永久存档</span>
+            </a>
+            <nav class="hidden md:flex gap-6 text-sm font-medium">
+                <a href="/" class="hover:text-brand-500 transition">首页</a>
+                <a href="/category/" class="hover:text-brand-500 transition">分类索引</a>
+                <a href="/archive/" class="hover:text-brand-500 transition">时间归档</a>
+                <a href="https://arweave.org" target="_blank" class="text-brand-500 bg-brand-500/10 px-3 py-1 rounded-full text-xs flex items-center gap-1">
+                    <span class="w-2 h-2 rounded-full bg-green-500 animate-pulse"></span> Arweave Permanet
+                </a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- Crypto Ticker -->
+    <div class="bg-slate-900 border-b border-slate-800 py-2 overflow-hidden">
+        <div class="ticker-wrap container mx-auto">
+            <div class="ticker text-xs font-mono text-slate-400">
+                <span class="mx-4"><span class="text-green-400">BTC</span> $98,420 ▲ 2.1%</span>
+                <span class="mx-4"><span class="text-blue-400">ETH</span> $3,850 ▲ 1.4%</span>
+                <span class="mx-4"><span class="text-yellow-400">BNB</span> $620 ▲ 0.5%</span>
+                <span class="mx-4"><span class="text-purple-400">SOL</span> $145 ▼ 0.2%</span>
+                <span class="mx-4">Permanent Storage: Active</span>
+                <span class="mx-4"><span class="text-green-400">BTC</span> $98,420 ▲ 2.1%</span>
+                <span class="mx-4"><span class="text-blue-400">ETH</span> $3,850 ▲ 1.4%</span>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-12" id="latest">
+        <div class="flex items-center justify-between mb-8">
+            <h2 class="text-2xl font-bold text-white flex items-center gap-2">
+                <span class="text-brand-500">❖</span> 分类: DeFi
+            </h2>
+            <div class="text-sm text-slate-500">
+                第 1 页 / 共 1 页
+            </div>
+        </div>
+
+        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6">
+            
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-09-19</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/mfagT1OariiXXavXocl58fSMOHzGmVoqMv513PjVe3w" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        0x协议V4更新深度分析：技术演进、生态影响与未来展望
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文深度解析0x协议V4更新的技术创新、生态协同、风险与未来趋势，帮助开发者和投资者全面了解该升级对DeFi和跨链交易的影响。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-06-27</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/f5ThDdU72vhYka1OdDnqq3Lvmo6tTBVmCBbKKsWyGYM" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        0xScope：重塑Web3数据革命的下一个十年
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    深度解析0xScope如何通过实体解析技术穿透Web3数据迷雾，揭示2025年数据主权经济趋势。了解区块链身份革命的核心引擎与投资机遇，掌握下一代DeFi基础设施的演化路径。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-16</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/uzeYr_HS__XCGKfFJtuQ8ahRNpHJfHu5K_Q4vieSwJU" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        15个DeFi入门必备专业术语大全
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    这篇文章主要介绍了15个DeFi入门必备专业术语大全，DeFi中的所有事情都是通过区块链完成的：一个不会被损坏的分散式帐簿，清楚记录着每笔交易。本期先从一些最重要的DeFi术语开始入门吧！
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-05</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/9GUaQDLqLWDkoJLfv97tx4fK4Wa4z0x0u3sYrsTb0SY" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        15 个指标概述 2022 年 DeFi 现状
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    2022 年 DeFi 的现状如何？这里有 15 个需要了解的指标。 原文： 2022 State of DeFi: Price Performance, TVL, Trading Volume, Development Activity, and more. 作者： Ignas | DeFi...
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-08-25</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/t_-UoM_MF3H9FA1QXFrMGcj7Iq3h9eSM_DgL0XBhw0c" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        1inch空投机制解析与未来治理代币价值前瞻
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    深度解析1inch空投inch机制与治理价值，了解INCH代币空投资格标准、未来功能扩展及生态发展前景。包含权威数据分析和风险提示，为参与者提供全面参考。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-27</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/M-U5VPajoMjkV55Z8lFdwlkMUZ4gmDYDHf0AuitKcq8" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        掌握1inch DEX聚合器使用技巧，提高您的加密货币交易效率！
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文将详细介绍1inch DEX聚合器的使用技巧，帮助您提高加密货币交易效率，降低交易成本，提高投资回报。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-27</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/AV03jJPyT_Rtv_qBrgDsdwlynn-3upWUXhIXUUCePno" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        掌握1inch DEX聚合器，提高交易效率和利润！
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文将教您如何使用1inch DEX聚合器，提高交易效率和利润。了解1inch的优点、使用方法和风险管理策略，从而提高您的加密货币交易体验。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-27</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/GIK-JmdZh-Nw96YdEy1sdvoKsvgxWKFAlu9ZPl_SWrI" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        解锁1inch DEX聚合器的秘密：提高交易效率的实用技巧
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文将深入介绍1inch DEX聚合器的使用技巧，帮助您提高交易效率、降低交易成本，并提供实用的投资策略和风险管理建议。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-26</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/q9IQt_W5lmB_yOpKhr6QV_5PtjvgXz7lV0JDnEvvq_Q" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        1inch DEX聚合器使用技巧：新手必备的加密货币交易指南
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    了解1inch DEX聚合器的使用技巧，提高您的加密货币交易效率，降低交易成本。掌握最新的交易策略和风险管理技巧，成为币圈高手！
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-27</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/q8BfS87sdL39dNmBQHjzYKlTIbF39gLg-KKpjXxbDgA" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        掌握1inch DEX聚合器使用技巧，交易更智能！
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文将深入探讨1inch DEX聚合器的使用技巧，帮助您更好地掌握加密货币交易，提高交易效率和回报率。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-26</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/DDyNuSGwyB6e7uGrg3QOztgFbYKmlkzt8cC0Xa4e__U" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        掌握1inch DEX聚合器的使用技巧，最大化你的加密货币交易利润！
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文将详细介绍1inch DEX聚合器的使用技巧，教你如何最大化交易利润，降低风险，并提供实用的交易策略和风险管理建议。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-09-19</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/2iD0anM6Uq2R3E38HE2N1F5eMn-P0LfkIJGoRTv0iiw" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        1inch DEX聚合器使用全攻略：深度分析与实战指南
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    深入解析1inch DEX聚合器使用方法，涵盖路由原理、分片交易、Permit 授权、费用结构及实战案例，帮助用户在DeFi中实现最优交易体验。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-05-03</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/o6Ko6xkQHviNz_aE8RhHOVvoxC-A3KD1h2FnEPBF4G4" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        1inch：2025年DeFi生态的神经中枢将如何重塑价值流动
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    深度解析1inch协议在2025年的技术演进与生态布局，揭示聚合协议如何重塑DeFi价值流动，助您把握区块链未来趋势。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-07-05</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/iQ1deFkxmHGoZxPqpphXqS0qr_5FRUlqRpuL4fteFNs" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        1inch、Balancer: 关于DeFi未来的探讨
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本文针 Fenbushi 和 Balancer、1inch 的 Twitter Space 做了整理，节选了嘉宾们的精彩对话。其中，Mike 是 Balancer DAO 的技术负责人，而 Nikita 是 1inch 的早期成员，负责市场拓展方面。 封面： Photo by Milad...
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2025-05-03</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/8GJ1NDoIpRr95tlD1CcNe02yLsYQVkC-HMH8I3k6xz0" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2017年ICO泡沫：数字淘金热留下的未来密码
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    深度解析2017年ICO泡沫如何塑造区块链未来，揭示2025年关键技术突破与监管进化。从狂热废墟中发现价值重构密码，把握Web3时代投资先机。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-28</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/Hs7jmAVgZAvanSEg-2kQW7QdU-7L7lbcrkxZjt-fyF8" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2018比特现金挖矿一天收益多少?BCH挖矿收益分析
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    2018比特现金挖矿一天收益多少?比特币是数字货币界众多周知的第一大币种，比特币是从矿场产出的，比特矿机24小时不停地进行哈希碰撞，是为了争夺区块链的记账权。谁记账，最新生成的比特币就奖励给谁，这就是
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-30</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/cZT2LCgmL_ohxC7HbEP888XbGpi3X80bKG5lKTtW8KQ" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2018莱特币挖矿成本是多少?莱特币挖矿成本分析
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    莱特币的发行，让越来越多的朋友认识到数字货币的重要性，也会关心2018莱特币挖矿成本的情况，我们知道2018年每天能够挖出多少莱特币吗?下面就让小编来为大家简单介绍一下其中的内容吧。如果说比特币(Bitcoin)是虚拟数字黄
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-30</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/gCOM--_wpAk29HTuWxJK1duQeFPvW3Dx6dACyRs-rlw" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2019莱特币挖矿成本高吗?一天能挖多少莱特币?
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    2019莱特币挖矿成本高吗?随着时代的发展，让越来越多的朋友认识到数字货币的重要性，如果说比特币(Bitcoin)是虚拟数字黄金，那么莱特币(Litecoin)就是虚拟数字白银。莱特币同样是一种分布式(去中心化)的数字货币。那么2019
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-29</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/Lap4cqDy2XzQXdgY9eJ8IyL79ttM28gu06AMx9lq-UQ" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2019年6月数字货币挖矿市场收益报告总结篇
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    本报告提供了主流POW挖矿币种的挖矿收益情况，以某天单位算力收益计算的静态回本时间，仅供参考。影响矿工回本周期的因素主要有三个：币价，全网算力与矿机价格。回本周期越短表明目前市场的赚钱效应越好，潜在的大资本进场挖矿的可能性也就越高。当挖矿的收益持续无法覆盖其成本时，大批矿工会选择关掉矿机，届时将会导致矿...
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-29</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/3H7ZD2w2NRP_YjD1y688czypFG_dFZ5vIqbdjrshpbI" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2019手机免费挖矿赚钱软件有哪些？盘点免费挖矿软件
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    区块链自2017年因为比特币的爆涨而火起来，2018年应该算是商用的元年了，2019年对于一些朋友来说确实是一个幸运年，依靠区块链热潮，许多朋友还是狠赚了一笔的，一些朋友肯定也十分心动，想免费赚一笔，但是小编认为挖矿赚钱的软件免费玩就行了。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-30</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/57C4fWVGKKYauvXZ1epIk3bL-dobMHP6gOyFTBtOHws" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2020年DeFi八大关键趋势哪些会延续？
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    把握DeFi下一波趋势。2020年是时代性的一年。对于DeFi来说，在过去一年里，也从初兴转向爆发，我们见证了DeFi的力量。2020年年初，DeFi的创业者、开发者和投资者才刚刚开始了解和把玩DeFi这一乐高玩具，但到了年底DeFi为加密社区带来了最大的增长动能
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-30</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/2JFsNG9wVtOe4E71dv4EPulr0ojqj5F4SAi8IlmciXg" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2020年DeFi繁荣推动DApp总交易量增长近12倍
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    根据DappRadar，2020年迄今为止的DApp总交易量已经高达2700亿美元，其中95%来自以太坊上的DeFi生态系统。与去年210亿美元的总交易量相比，今年的DApp交易量增长惊人，涨幅为1178%。区块链数据提供商DappRadar在其年度《DApp行业报告》
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        <article class="group relative flex flex-col bg-cardbg border border-slate-800 rounded-xl overflow-hidden hover:shadow-2xl hover:shadow-brand-500/10 transition-all duration-300 hover:-translate-y-1 group-hover:border-brand-500/50">
+            <div class="p-6 flex flex-col h-full">
+                <div class="flex items-center gap-2 mb-4">
+                    <span class="px-2 py-1 bg-slate-800 text-slate-400 text-xs rounded border border-slate-700">DeFi</span>
+                    <time class="text-xs text-slate-500">2024-06-28</time>
+                </div>
+                <h3 class="text-lg font-bold text-white mb-3 line-clamp-2 group-hover:text-brand-400 transition-colors">
+                    <a href="https://arweave.net/9H_wzrcfFiwFhf1raeQ2BQ3h9OObxmv6oBIjm6SrdyI" target="_blank" rel="noopener" class="before:absolute before:inset-0">
+                        2020年加密犯罪有所下降，但DeFi黑客却在增加
+                    </a>
+                </h3>
+                <p class="text-slate-400 text-sm line-clamp-3 mb-4 flex-grow">
+                    一份新的报告称，与加密货币相关的犯罪活动在2020年有所放缓，但加密行业内的一些领域已经成为犯罪活动的新温床。11月10日，路透社援引主要加密分析公司CipherTrace的报告称，加密盗窃、黑客攻击和欺诈造成的总损失从2019年的44亿美元下降到2020年前10个月的18亿美元。
+                </p>
+                <div class="flex items-center text-brand-500 text-sm font-medium mt-auto">
+                    <span>Read on Arweave</span>
+                    <svg class="w-4 h-4 ml-1 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                    </svg>
+                </div>
+            </div>
+        </article>
+        
+        </div>
+
+        <!-- Pagination -->
+        <div class="mt-16 flex justify-center gap-2 flex-wrap">
+            <a href="/" class="px-4 py-2 bg-slate-800 rounded border border-slate-700 hover:bg-slate-700 transition">返回首页</a>
+        </div>
+    </main>
+
+    <footer class="bg-cardbg border-t border-slate-800 pt-16 pb-8 mt-auto">
+        <div class="container mx-auto px-4">
+            <div class="grid grid-cols-1 md:grid-cols-4 gap-12 mb-12">
+                <div class="col-span-1 md:col-span-2">
+                    <div class="flex items-center gap-2 mb-4">
+                        <div class="w-6 h-6 rounded bg-brand-500 flex items-center justify-center text-white text-xs font-bold">B</div>
+                        <span class="text-lg font-bold text-white">币易家永久存档</span>
+                    </div>
+                    <p class="text-slate-500 text-sm leading-relaxed max-w-sm">
+                        致力于构建去中心化的知识图谱。所有内容指纹 (TXID) 均已上链，确保信息的真实性与持久性。
+                    </p>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">热门分类</h3>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="/category/Binance.html" class="hover:text-brand-400 transition">Binance 教程</a></li>
+                        <li><a href="/category/Bitcoin.html" class="hover:text-brand-400 transition">Bitcoin 深度解析</a></li>
+                        <li><a href="/category/DeFi.html" class="hover:text-brand-400 transition">DeFi 挖矿指南</a></li>
+                        <li><a href="/category/News.html" class="hover:text-brand-400 transition">行业快讯</a></li>
+                    </ul>
+                </div>
+                <div>
+                    <h3 class="text-white font-semibold mb-4">关于</h3>
+                    <ul class="space-y-2 text-sm text-slate-500">
+                        <li><a href="/sitemap.xml" class="hover:text-brand-400 transition">Sitemap</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">API Access</a></li>
+                        <li><a href="#" class="hover:text-brand-400 transition">Arweave Node</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="border-t border-slate-800 pt-8 text-center text-xs text-slate-600">
+                <p>&copy; 2025 币易家永久存档. Content stored on Arweave Permaweb.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
